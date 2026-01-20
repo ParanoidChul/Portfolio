@@ -158,9 +158,15 @@ li {
 }
 
 .cv-block li {
-  margin-bottom: 12px; /* mer luft mellom linjene */
+  margin-bottom: 12px;
   line-height: 1.6;
 }
+
+.cv-block li strong {
+  font-weight: 600;
+}
+
+
 
 
 /* =========================
@@ -225,7 +231,6 @@ li {
     height: 120px;
   }
 
-}
 
 
 
