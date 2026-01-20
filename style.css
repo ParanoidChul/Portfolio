@@ -116,7 +116,7 @@ body {
 }
 
 .section {
-  padding: 100px 20px;
+  padding: 80px 20px;
 }
 
 .section h2 {
@@ -145,29 +145,16 @@ li {
 .cv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px; /* mer luft mellom kolonnene */
+  gap: 40px;
 }
 
 .cv-block h2 {
-  margin-bottom: 24px;
-  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .cv-block ul {
   padding-left: 18px;
 }
-
-.cv-block li {
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-.cv-block li strong {
-  font-weight: 600;
-}
-
-
-
 
 /* =========================
    KONTAKT
@@ -231,6 +218,4 @@ li {
     height: 120px;
   }
 
-
-
-
+}
