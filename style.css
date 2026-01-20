@@ -1,165 +1,139 @@
 /* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  }
 
 /* BODY */
 body {
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #222;
-  line-height: 1.6;
+font-family: Arial, sans-serif;
+color: #222;
+line-height: 1.6;
 }
 
 /* HERO */
 .hero {
-  min-height: 85vh;
-  background-image: url("hero.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  position: relative;
-  color: #ffffff;
+min-height: 85vh;
+background-image: url("hero.jpg");
+background-size: cover;
+background-position: center top;
+position: relative;
+color: #fff;
 }
 
-/* Overlay */
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.45);
 }
 
 .hero * {
-  position: relative;
+position: relative;
 }
 
 /* NAV */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 40px;
+display: flex;
+justify-content: space-between;
+padding: 24px 40px;
 }
 
 .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 24px;
+display: flex;
+gap: 24px;
+list-style: none;
 }
 
 .nav-menu a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-menu a:hover {
-  text-decoration: underline;
+color: #fff;
+text-decoration: none;
 }
 
 .social a {
-  margin-left: 16px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
+margin-left: 16px;
+color: #fff;
+text-decoration: none;
 }
 
 /* HERO CONTENT */
 .hero-content {
-  min-height: calc(85vh - 80px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+min-height: calc(85vh - 80px);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
 }
 
 .profilbilde {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid rgba(255,255,255,0.8);
+width: 160px;
+height: 160px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+border: 3px solid rgba(255,255,255,0.8);
 }
 
 .navn {
-  font-size: 48px;
-  margin-bottom: 10px;
+font-size: 48px;
 }
 
 .tagline {
-  font-size: 20px;
-  opacity: 0.9;
+font-size: 20px;
+opacity: 0.9;
 }
 
-/* CONTENT */
+/* SEKSJONER */
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 80px 20px;
+max-width: 1100px;
+margin: 0 auto;
 }
 
 .section {
-  margin-bottom: 80px;
+margin-bottom: 80px;
+padding: 0 20px;
 }
 
-h2 {
-  margin-bottom: 20px;
+/* CV GRID */
+.cv-grid {
+display: flex;
+gap: 40px;
+padding: 0 20px 80px;
 }
 
-p {
-  margin-bottom: 16px;
+.cv-grid .section {
+flex: 1;
 }
 
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
+/* REKKEFØLGE */
+#utdanning { order: 1; }
+#konkurranse { order: 2; }
+#cv { order: 3; }
 
 /* FOOTER */
 .footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 14px;
-  color: #666;
+text-align: center;
+padding: 40px;
+color: #666;
 }
 
 /* MOBIL */
-@media (max-width: 768px) {
-
-  .hero {
-    min-height: 100vh;
-  }
-
-  .nav {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .navn {
-    font-size: 32px;
-  }
-
-  .tagline {
-    font-size: 16px;
-  }
-
-  .profilbilde {
-    width: 120px;
-    height: 120px;
-  }
+@media (max-width: 900px) {
+.cv-grid {
+flex-direction: column;
 }
+
+.nav {
+flex-direction: column;
+gap: 16px;
+}
+
+.navn {
+font-size: 32px;
+}
+}
+
 
