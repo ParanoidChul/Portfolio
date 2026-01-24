@@ -1,0 +1,177 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #201a16;
+  color: #f5f3ef;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background: url("test.JPG") center / cover no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(32,26,22,0.25),
+    rgba(32,26,22,0.75)
+  );
+}
+
+/* MAIN */
+main {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+/* TITLER */
+h2 {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #e8dccb;
+}
+
+/* ESSAY */
+.essay-intro {
+  max-width: 520px;
+  margin-bottom: 4rem;
+}
+
+.essay-intro p {
+  font-style: italic;
+  opacity: 0.75;
+  line-height: 1.8;
+}
+
+.essay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.essay-grid img {
+  width: 100%;
+  display: block;
+}
+
+.essay-full {
+  grid-column: span 2;
+}
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  max-width: 120px;
+  background: rgba(232,220,203,0.35);
+  margin: 7rem auto;
+}
+
+/* CV */
+.cv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 4rem;
+}
+
+.cv-block h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  color: #d8c7b0;
+}
+
+.cv-list {
+  list-style: none;
+}
+
+.cv-list li {
+  display: grid;
+  grid-template-columns: 90px auto;
+  column-gap: 1.4rem;
+  margin-bottom: 0.8rem;
+  align-items: baseline;
+}
+
+.cv-list span:first-child {
+  font-size: 0.85rem;
+  opacity: 0.55;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cv-list span:last-child {
+  white-space: nowrap;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .essay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .essay-full {
+    grid-column: span 1;
+  }
+
+  .cv-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 38vh;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+
