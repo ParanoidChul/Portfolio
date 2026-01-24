@@ -174,4 +174,14 @@ footer {
   }
 }
 
+.essay-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.essay-grid figure {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
 
