@@ -1,104 +1,140 @@
-/* RESET */
+/* =========================
+   RESET & BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  background: #201a16;
-  color: #f5f3ef;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1b1816;
+  color: #f2f2f2;
   line-height: 1.6;
 }
 
-/* HERO */
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 620px;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
   height: 70vh;
-  background: url("test.JPG") center / cover no-repeat;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(32,26,22,0.25),
-    rgba(32,26,22,0.75)
-  );
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("Food/mat1.jpg") center / cover no-repeat;
 }
 
-/* MAIN */
+/* =========================
+   MAIN LAYOUT
+========================= */
 main {
-  max-width: 1200px;
-  margin: 5rem auto;
-  padding: 0 2rem;
+  width: 100%;
 }
 
-section {
-  margin-bottom: 6rem;
+/* =========================
+   ESSAY SECTION
+========================= */
+.essay {
+  padding: 6rem 5vw;
 }
 
-/* TITLER */
-h2 {
-  font-variant: small-caps;
-  letter-spacing: 0.08em;
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-  color: #e8dccb;
-}
-
-/* ESSAY */
 .essay-intro {
-  max-width: 520px;
   margin-bottom: 4rem;
 }
 
 .essay-intro p {
-  font-style: italic;
-  opacity: 0.75;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
+/* GRID */
 .essay-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  gap: 2rem;
 }
 
-.essay-grid img {
+figure {
   width: 100%;
-  display: block;
+  height: 100%;
+  overflow: hidden;
 }
 
+/* Full width images */
 .essay-full {
   grid-column: span 2;
 }
 
-/* DIVIDER */
-.section-divider {
-  height: 1px;
-  max-width: 120px;
-  background: rgba(232,220,203,0.35);
-  margin: 7rem auto;
+/* Images */
+figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* CV */
+/* 🔥 Spesifikt utsnitt for mat4 */
+.essay-grid img[src*="mat4"] {
+  object-position: center 92%;
+}
+
+/* =========================
+   DIVIDERS
+========================= */
+.section-divider {
+  height: 1px;
+  width: 80%;
+  margin: 6rem auto;
+  background: rgba(255,255,255,0.15);
+}
+
+/* =========================
+   CV SECTION
+========================= */
+.cv-section {
+  padding: 6rem 5vw;
+}
+
 .cv-columns {
   display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
-  gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .cv-block h3 {
-  font-size: 1.1rem;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 1.8rem;
-  color: #d8c7b0;
+  letter-spacing: 0.08em;
 }
 
 .cv-list {
@@ -106,33 +142,37 @@ h2 {
 }
 
 .cv-list li {
-  display: grid;
-  grid-template-columns: 90px auto;
-  column-gap: 1.4rem;
-  margin-bottom: 0.8rem;
-  align-items: baseline;
-}
-
-.cv-list span:first-child {
-  font-size: 0.85rem;
-  opacity: 0.55;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.cv-list span:last-child {
-  white-space: nowrap;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 3rem 1rem;
+  display: flex;
+  justify-content: space-between;
   font-size: 0.9rem;
-  opacity: 0.5;
+  margin-bottom: 0.6rem;
+  opacity: 0.9;
 }
 
-/* FADE */
+/* =========================
+   CONTACT
+========================= */
+#kontakt {
+  padding: 6rem 5vw;
+}
+
+#kontakt p {
+  font-size: 1rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 2rem 5vw;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* =========================
+   FADE ANIMATION
+========================= */
 .fade {
   opacity: 0;
   transform: translateY(20px);
@@ -144,7 +184,9 @@ footer {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
   .essay-grid {
     grid-template-columns: 1fr;
@@ -156,32 +198,10 @@ footer {
 
   .cv-columns {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    height: 38vh;
   }
 
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  p {
-    font-size: 0.95rem;
+  /* Litt mer bunn på mobil */
+  .essay-grid img[src*="mat4"] {
+    object-position: center 96%;
   }
 }
-
-.essay-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.essay-grid figure {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
